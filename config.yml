@@ -1,0 +1,73 @@
+title: Lab Exercices de Codage en Python
+tagline: 'Random numbers, variables, and conditionals'
+description: Apprendre à éxécuter des exercices en Python!
+tags:
+  - Python
+template:
+  name: lab-codage-de-comprehension-en-python
+  repo: lab-codage-de-comprehension-en-python-patron
+  description: Exercices de codage des lists comprehensions dans le language Python
+before:
+  - type: createIssue
+    title: Installer l'environnement de codage Python
+    body: .install/01-install.md
+steps:
+  - title: 1er Exercice 
+    description: Enlever le commentaire
+    event: issue_comment
+    link: '{{ repoUrl }}/issues/1'
+    actions:
+      - type: respond
+        with: 01/01-execute.md
+        issue: 1
+        data:
+          id: '%payload.comment.body%'
+  - title: 2ème Exercice
+    description: Définition d'une fonction simple
+    event: push
+    link: '{{ repoUrl }}/issues/2'
+    actions:
+      - type: respond
+        with: 01/02-complete.md
+        issue: 1
+      - type: closeIssue
+        issue: 1
+      - type: createIssue
+        title: Exo 2
+        body: 02/01-execute.md
+  - title: 3ème Exercice
+    description: Recherche de nombre pairs
+    event: push
+    link: '{{ repoUrl }}/issues/3'
+    actions:
+      - type: respond
+        with: 02/02-complete.md
+        issue: 2
+      - type: closeIssue
+        issue: 2
+      - type: createIssue
+        title: Exo 3
+        body: 03/01-execute.md
+  - title: 4ème Exercice
+    description: Conversion de liste en ensemble
+    event: push
+    link: '{{ repoUrl }}/issues/4'
+    actions:
+      - type: respond
+        with: 03/02-complete.md
+        issue: 3
+      - type: closeIssue
+        issue: 3
+      - type: createIssue
+        title: Exo 4
+        body: 04/01-execute.md
+  - title: Récapitulation 
+    description: Récapitulation des exercices
+    event: push
+    link: '{{ repoUrl }}'
+    actions:
+      - type: respond
+        with: .end/01-complete.md
+        issue: 4
+      - type: closeIssue
+        issue: 4
